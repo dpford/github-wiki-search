@@ -8,7 +8,7 @@ def index():
     index_users('https://api.github.com/orgs/{}/members?per_page=9999'.format(
         settings.GITHUB_ORG))
 
-def index_gh_users(url):
+def index_users(url):
     r = requests.get(url)
     bulk_data_obj = []
     for person in r.json():
